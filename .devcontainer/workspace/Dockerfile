@@ -9,3 +9,7 @@ RUN yum install -y \
 
 #add ssh secret-key
 COPY .dummy .ssh/* /root/.ssh/
+
+#add .bashrc
+COPY .bashrc /root/
+RUN curl -o "/root/git-prompt.sh" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
